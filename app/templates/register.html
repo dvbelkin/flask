@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% include 'head.html' %}
+
+<body>
+    <section class="my-5">
+        <form class="login-form needs-validation" action="{{ url_for('auth.register') }}" method="POST" novalidate>
+            <div class="text-center">
+                
+                <img class="my-4" src="{{ url_for('main.static', filename='/img/logo_MS.gif') }}" />
+                <h5 class="mb-4">Регистрация<small>Введите ваши данные</small></h5>
+            </div>
+            <div class="mb-2">
+                <input class="form-control" name="user_name" type="text" placeholder="Имя пользователя" required>
+            </div>
+            <div class="mb-2">
+                <input 
+                    class="form-control needs-validation"
+                    id="email"
+                    name="email"
+                    type="email"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    placeholder="example@example.com"
+                    autocomplete="email"
+                    required
+                    autofocus>
+                <div class="invalid-feedback mb-2">
+                    Пожалуйста, введите корректный адрес электронной почты.
+                </div>
+
+            </div>
+            <div class="mb-2">
+                <input class="form-control" name="password" type="password" placeholder="Пароль A-Z, a-z, 0-9, _!@#$%^&*()-=" required>
+            </div>
+            <div class="mb-4">
+                <button type="submit" class="btn btn-primary btn-block">Регистрация</button>
+            </div>
+                            
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="messages-{{category}}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            
+        </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

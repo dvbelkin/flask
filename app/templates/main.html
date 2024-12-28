@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+  {% include 'head.html' %}
+
+  <body class="d-flex flex-column h-100">
+    <!-- Навигационное меню -->
+    {% include 'navbar.html' %}
+
+    <!-- Основное содержимое -->
+    <div class="mainbox">
+        <main class="container my-5">
+            <div class="text-center">
+                <h1>Добро пожаловать в сервис транскрибации аудио!</h1>
+                <p class="lead">
+                Здесь вы можете загружать свои аудиофайлы и получать их текстовую расшифровку
+                с использованием технологий машинного обучения.
+                </p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">
+                Начать загрузку файла
+                </a>
+            </div>
+        </main>
+    </div>
+    <!-- Раздел преимуществ -->
+    <section class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h3>Быстро</h3>
+          <p>Наши модели расшифровывают аудио за считанные минуты.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Точно</h3>
+          <p>Точность распознавания речи достигает 95%.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Удобно</h3>
+          <p>Простой интерфейс для загрузки и скачивания готовых текстов.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел контактов -->
+    <section class="container my-5">
+      <h2 class="text-center">Свяжитесь с нами</h2>
+      <p class="text-center">
+        Если у вас возникли вопросы или предложения, напишите нам по адресу:
+        <strong>support@transcribepro.ru</strong>
+      </p>
+    </section>
+
+    <!-- Подвал -->
+    {% include 'foot.html' %}
+  </body>
+</html>

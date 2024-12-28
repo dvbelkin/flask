@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+flask-jwt-extended
+python-dotenv
+pytest
+gunicorn
+cryptography
+pymysql

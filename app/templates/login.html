@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  {% include 'head.html' %}
+  
+  <body>
+    <section class="my-lg-5">
+      <form
+        class="login-form needs-validation"
+        action="{{ url_for('auth.login') }}"
+        method="post"
+        novalidate
+      >
+        <div class="text-center">
+          
+          <img class="mb-4" src="{{ url_for('main.static', filename='/img/logo_MS.gif') }}" />
+          <h5 class="mb-4">
+            Вход в личный кабинет<small>Введите ваши данные</small>
+          </h5>
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="messages-{{category}}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="mb-2">
+          <input 
+            class="form-control needs-validation"
+            id="email"
+            name="email"
+            type="email"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            placeholder="example@example.com"
+            autocomplete="email"
+            required
+            autofocus/>
+
+          <div class="invalid-feedback mb-2">
+            Пожалуйста, введите корректный адрес электронной почты.
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <input
+            class="form-control"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Пароль"
+            autocomplete="current-password"
+            required
+          />
+          <div class="invalid-feedback my-2">Обязательное</div>
+        </div>
+        <div class="mb-2">
+          <button type="submit" class="btn btn-primary btn-block">Вход</button>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="{{ url_for('auth.register') }}">Зарегистрироваться</a>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="{{ url_for('auth.getpass') }}">Восстановить доступ</a>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

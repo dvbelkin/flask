@@ -1,0 +1,124 @@
+.speaker {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.highlight {
+    border: 2px solid red; /* Желтые границы */
+}
+
+textarea {
+    width: 100%;
+    overflow: hidden; /* Прячем скролл */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+div#table-text {
+    margin-bottom: 100px;
+}
+
+select {
+    padding: 5px 10px;
+    margin: 10px 0px;
+}
+
+span[name='StartAndEnd'] {
+    margin: 10px 0px;
+}
+
+.menu {
+    position: fixed; /* Фиксированное меню */
+    top: 0; /* Прикрепляем к верхней части страницы */
+    left: 0;
+    width: 100%; /* Ширина меню равна ширине страницы */
+    background-color: #333; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 10px; /* Внутренний отступ */
+    z-index: 1000; /* Слой выше других элементов */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Тень под меню */
+    
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между крайними элементами */
+
+}
+
+/* Стили для кнопки в меню */
+.menu button {
+    background-color: #4CAF50; /* Зеленый цвет кнопки */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор в виде руки */
+    font-size: 16px; /* Размер шрифта */
+}
+
+#project_name {
+    cursor: default; /* Курсор в виде руки */
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.left-item {
+    margin-left: 5px; /* Добавляем отступы между левыми элементами */
+}
+
+.right-item {
+    margin-right: 20px; /* Отодвигает элемент к правому краю */
+}
+
+.content {
+    margin-top: 60px; /* Отступ от верхнего края (высота меню + небольшой отступ) */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 30px; /* Отступ от нижнего края (высота меню + небольшой отступ) */
+}
+
+audio {
+    position:fixed; 
+    bottom: 10px;; 
+    left: 10px;; 
+    width:100%;
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.save-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.save-button img {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  {% include 'head.html' %}
+
+  <body>
+    <section class="py-lg-5">
+      <form action="{{ url_for('auth.getpass') }}" method="post">
+        <div class="login-form">
+          <div class="text-center">
+            <img
+              class="mb-3"
+              src="{{ url_for('main.static', filename='img/logo_MS.gif') }}"
+            />
+            <h5 class="mb-4">
+              Форма запроса нового пароля<small>Введите ваши данные</small>
+            </h5>
+          </div>
+
+          
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for category, message in messages %}
+              <div class="messages-{{category}}">
+                {{ message }}
+              </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          
+          <div class="mb-2">
+            <input 
+              class="form-control needs-validation"
+              id="email"
+              name="email"
+              type="email"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              placeholder="example@example.com"
+              autocomplete="email"
+              required
+              autofocus>
+  
+            <div class="invalid-feedback mb-2">
+              Пожалуйста, введите корректный адрес электронной почты.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mt-4 mb-2">
+            Отправить
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </body>
+</html>
